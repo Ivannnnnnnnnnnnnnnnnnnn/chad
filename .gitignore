@@ -3,3 +3,5 @@ _server.log
 node_modules/
 
 .env
+
+.vscode/
