@@ -23,7 +23,7 @@ const check = (name, ok, detail = '') => {
   });
 
   // --- pages render ---
-  for (const [path, marker] of [['/', 'Statut Réseau'], ['/plans/', 'Choisissez Votre Forfait'], ['/settings/', 'Paramètres']]) {
+  for (const [path, marker] of [['/', 'Choisissez Votre Forfait'], ['/statut/', 'Statut Réseau'], ['/settings/', 'Paramètres']]) {
     const res = await p.goto(BASE + path, { waitUntil: 'domcontentloaded' });
     await p.waitForTimeout(400);
     const body = await p.locator('body').innerText();

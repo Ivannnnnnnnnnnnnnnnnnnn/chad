@@ -266,9 +266,11 @@ app.set("views", viewsDir);
 const PAGE = (name) => path.join(rootDir, "public", name);
 app.use("/static", express.static(path.join(rootDir, "public", "static")));
 
-app.get("/", (_req, res) => res.render("status.html", { status: NETWORK, active: "status" }));
+app.get("/", (_req, res) => res.render("plans.html", { plans: PLANS, active: "plans" }));
 app.get("/plans", (_req, res) => res.render("plans.html", { plans: PLANS, active: "plans" }));
 app.get("/plans/", (_req, res) => res.render("plans.html", { plans: PLANS, active: "plans" }));
+app.get("/statut", (_req, res) => res.render("status.html", { status: NETWORK, active: "status" }));
+app.get("/statut/", (_req, res) => res.render("status.html", { status: NETWORK, active: "status" }));
 app.get("/settings", (_req, res) => res.render("settings.html", { active: "settings" }));
 app.get("/settings/", (_req, res) => res.render("settings.html", { active: "settings" }));
 
