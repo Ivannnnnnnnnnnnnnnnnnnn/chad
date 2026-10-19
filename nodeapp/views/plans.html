@@ -1,0 +1,83 @@
+<section class="space-y-4">
+    <h1 class="text-2xl font-bold text-black">Choisissez Votre Forfait</h1>
+    <p class="text-gray-500 text-sm">Paiement sécurisé par Airtel Money ou Moov Money.</p>
+
+    <div id="plansGrid" class="space-y-3">
+        {{#each plans}}
+        <div class="package-card bg-white rounded-2xl border-2 border-gray-100 p-4 flex items-center justify-between"
+             data-package-id="{{id}}"
+             data-package-name="{{name}}"
+             data-package-data="{{badge}}"
+             data-package-price="{{price_xaf}}">
+            <div>
+                <div class="flex items-center gap-2">
+                    <p class="font-bold text-black">{{name}}</p>
+                    {{#if is_featured}}<span class="text-[10px] bg-black text-white px-2 py-0.5 rounded-full">Populaire</span>{{/if}}
+                </div>
+                <p class="text-sm text-gray-500">{{description}}</p>
+                <p class="text-xs text-gray-400 mt-1">{{badge}}</p>
+            </div>
+            <div class="text-right">
+                <p class="font-bold text-black">XAF {{price_xaf}}</p>
+                <button type="button" class="select-plan-btn mt-2 airtel-red-bg text-white text-xs font-bold px-4 py-2 rounded-full">Choisir</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div id="checkoutError" class="hidden rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"></div>
+</section>
+
+<div id="paymentModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-white w-full sm:max-w-lg sm:rounded-3xl rounded-t-3xl max-h-[92vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between">
+            <h3 class="font-bold text-lg text-black">Finaliser le paiement</h3>
+            <button type="button" id="closeModalBtn" class="text-gray-400 hover:text-black text-2xl leading-none">&times;</button>
+        </div>
+
+        <form id="paymentForm" class="p-6 space-y-6" novalidate>
+            <input type="hidden" id="selectedPackageId" name="planId">
+            <input type="hidden" id="selectedPaymentMethod" name="method">
+
+            <div class="bg-gray-50 rounded-2xl border border-gray-100 p-4 text-sm space-y-1">
+                <div class="flex justify-between"><span class="text-gray-500">Forfait</span><span id="summaryName" class="font-bold text-black">—</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Données</span><span id="summaryData" class="font-bold text-black">—</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Total</span><span id="summaryPrice" class="font-bold text-black">—</span></div>
+            </div>
+
+            <div>
+                <p class="font-semibold text-sm text-gray-700 mb-3">Mode de paiement</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" class="payment-method-btn border-2 border-gray-200 rounded-2xl p-4 flex flex-col items-center gap-2 hover:border-black transition" data-method="airtel">
+                        <span class="font-extrabold text-red-600">airtel</span>
+                        <span class="text-xs font-semibold text-gray-700">Airtel Money</span>
+                    </button>
+                    <button type="button" class="payment-method-btn border-2 border-gray-200 rounded-2xl p-4 flex flex-col items-center gap-2 hover:border-black transition" data-method="moov">
+                        <span class="font-extrabold text-blue-600">moov</span>
+                        <span class="text-xs font-semibold text-gray-700">Moov Money</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="phoneSection" class="hidden space-y-6">
+                <div>
+                    <label for="phone_number" class="font-semibold text-sm text-gray-700 mb-2 block">Numéro de téléphone</label>
+                    <div class="flex items-stretch border-2 border-gray-200 rounded-2xl focus-within:border-black transition overflow-hidden">
+                        <span class="flex items-center gap-2 px-4 bg-gray-50 border-r border-gray-200 text-gray-700 font-semibold text-sm select-none">
+                            <span aria-hidden="true">🇹🇩</span><span>+235</span>
+                        </span>
+                        <input type="tel" id="phone_number" name="phone" inputmode="tel" autocomplete="tel"
+                               placeholder="Ex: 66 12 34 56" required
+                               class="flex-1 min-w-0 border-0 px-4 py-3 focus:outline-none focus:ring-0 transition">
+                    </div>
+                    <p class="text-gray-400 text-xs mt-2" id="phoneHint">Entrez le numéro associé à votre compte mobile money (indicatif Tchad +235).</p>
+                    <p class="text-red-500 text-xs mt-1 hidden" id="phoneError" role="alert"></p>
+                </div>
+                <button type="submit" id="payBtn" class="w-full airtel-red-bg text-white font-bold py-4 rounded-full hover:opacity-90 transition disabled:opacity-60">
+                    Payer maintenant
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/static/js/plans.js" defer></script>

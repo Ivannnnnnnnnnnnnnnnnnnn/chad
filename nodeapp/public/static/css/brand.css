@@ -1,0 +1,25 @@
+/* Brand helpers kept outside Tailwind so they work with the CDN build. */
+.airtel-red-bg {
+  background-color: #e30613;
+}
+.card-shadow {
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.18);
+}
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.package-card.selected {
+  border-color: #e30613;
+}
+.payment-method-btn.selected {
+  border-color: #000;
+  background-color: #f9fafb;
+}
+.pin-box:disabled {
+  background-color: #f9fafb;
+  color: #9ca3af;
+}

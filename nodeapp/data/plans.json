@@ -1,0 +1,56 @@
+{
+  "plans": [
+    {
+      "id": "starter-5go",
+      "name": "Forfait Starter",
+      "badge": "5 Go",
+      "description": "Parfait pour la navigation quotidienne et les messages.",
+      "price_xaf": 750,
+      "is_unlimited": false,
+      "is_featured": false
+    },
+    {
+      "id": "daily-10go",
+      "name": "Forfait Quotidien",
+      "badge": "10 Go",
+      "description": "Idéal pour une journée de travail ou de streaming.",
+      "price_xaf": 1500,
+      "is_unlimited": false,
+      "is_featured": false
+    },
+    {
+      "id": "weekly-30go",
+      "name": "Forfait Hebdomadaire",
+      "badge": "30 Go",
+      "description": "Une semaine de données pour toute la famille.",
+      "price_xaf": 3000,
+      "is_unlimited": false,
+      "is_featured": true
+    },
+    {
+      "id": "monthly-100go",
+      "name": "Forfait Mensuel",
+      "badge": "100 Go",
+      "description": "Le meilleur rapport qualité/prix pour un usage quotidien.",
+      "price_xaf": 7500,
+      "is_unlimited": false,
+      "is_featured": false
+    },
+    {
+      "id": "unlimited",
+      "name": "Forfait Illimité",
+      "badge": "Illimité",
+      "description": "Aucune limite, pour le streaming et le travail à distance.",
+      "price_xaf": 15000,
+      "is_unlimited": true,
+      "is_featured": true
+    }
+  ],
+  "network_status": {
+    "download_mbps": 124.42,
+    "upload_mbps": 33.08,
+    "ping_ms": 22,
+    "jitter_ms": 4,
+    "data_used_percent": 20
+  }
+}

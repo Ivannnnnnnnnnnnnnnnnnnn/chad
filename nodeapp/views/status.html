@@ -1,0 +1,35 @@
+<section class="space-y-4">
+    <h1 class="text-2xl font-bold text-black">Statut Réseau</h1>
+    <p class="text-gray-500 text-sm">Performances mesurées de votre connexion Starlink.</p>
+
+    <div class="grid grid-cols-2 gap-3">
+        <div class="bg-white rounded-2xl border border-gray-100 p-4">
+            <p class="text-xs text-gray-500">Téléchargement</p>
+            <p class="text-2xl font-bold text-black">{{status.download_mbps}} <span class="text-sm font-semibold text-gray-500">Mbps</span></p>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-100 p-4">
+            <p class="text-xs text-gray-500">Téléversement</p>
+            <p class="text-2xl font-bold text-black">{{status.upload_mbps}} <span class="text-sm font-semibold text-gray-500">Mbps</span></p>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-100 p-4">
+            <p class="text-xs text-gray-500">Latence</p>
+            <p class="text-2xl font-bold text-black">{{status.ping_ms}} <span class="text-sm font-semibold text-gray-500">ms</span></p>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-100 p-4">
+            <p class="text-xs text-gray-500">Gigue</p>
+            <p class="text-2xl font-bold text-black">{{status.jitter_ms}} <span class="text-sm font-semibold text-gray-500">ms</span></p>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-gray-100 p-4">
+        <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-500">Utilisation des Données</span>
+            <span class="font-bold">{{status.data_used_percent}}%</span>
+        </div>
+        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full airtel-red-bg" style="width: {{status.data_used_percent}}%"></div>
+        </div>
+    </div>
+
+    <a href="/plans/" class="block text-center airtel-red-bg text-white font-bold py-4 rounded-full">Voir les forfaits</a>
+</section>
