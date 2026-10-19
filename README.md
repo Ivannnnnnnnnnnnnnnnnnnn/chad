@@ -49,8 +49,8 @@ node test-flow.cjs
 
 | Route | Description |
 |-------|-------------|
-| `/` | **Statut Réseau** — live speed dashboard (download/upload/ping/jitter) + data usage |
-| `/plans/` | **Forfaits** — data packages, payment modal (Airtel / Moov Money) |
+| `/` | **Forfaits** — data packages, payment modal (Airtel / Moov Money) |
+| `/statut/` | **Statut Réseau** — live speed dashboard (download/upload/ping/jitter) + data usage |
 | `/settings/` | **Paramètres** — settings tab |
 | `/orders/<ref>/<token>/pin` | PIN entry page |
 | `/orders/<ref>/<token>/otp` | OTP entry page |
