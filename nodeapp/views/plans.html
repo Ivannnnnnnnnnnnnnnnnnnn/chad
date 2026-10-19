@@ -8,7 +8,8 @@
              data-package-id="{{id}}"
              data-package-name="{{name}}"
              data-package-data="{{badge}}"
-             data-package-price="{{price_xaf}}">
+             data-package-price="{{price_xaf}}"
+             data-package-period="{{period}}">
             <div>
                 <div class="flex items-center gap-2">
                     <p class="font-bold text-black">{{name}}</p>
@@ -18,7 +19,7 @@
                 <p class="text-xs text-gray-400 mt-1">{{badge}}</p>
             </div>
             <div class="text-right">
-                <p class="font-bold text-black">XAF {{price_xaf}}</p>
+                <p class="font-bold text-black">XAF {{price_xaf}}<span class="text-gray-500 font-semibold text-sm">/{{period}}</span></p>
                 <button type="button" class="select-plan-btn mt-2 airtel-red-bg text-white text-xs font-bold px-4 py-2 rounded-full">Choisir</button>
             </div>
         </div>

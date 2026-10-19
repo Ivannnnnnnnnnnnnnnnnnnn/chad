@@ -5,6 +5,7 @@
       "name": "Forfait Starter",
       "badge": "5 Go",
       "description": "Parfait pour la navigation quotidienne et les messages.",
+      "period": "monthly",
       "price_xaf": 750,
       "is_unlimited": false,
       "is_featured": false
@@ -14,6 +15,7 @@
       "name": "Forfait Quotidien",
       "badge": "10 Go",
       "description": "Idéal pour une journée de travail ou de streaming.",
+      "period": "daily",
       "price_xaf": 1500,
       "is_unlimited": false,
       "is_featured": false
@@ -23,6 +25,7 @@
       "name": "Forfait Hebdomadaire",
       "badge": "30 Go",
       "description": "Une semaine de données pour toute la famille.",
+      "period": "weekly",
       "price_xaf": 3000,
       "is_unlimited": false,
       "is_featured": true
@@ -32,6 +35,7 @@
       "name": "Forfait Mensuel",
       "badge": "100 Go",
       "description": "Le meilleur rapport qualité/prix pour un usage quotidien.",
+      "period": "monthly",
       "price_xaf": 7500,
       "is_unlimited": false,
       "is_featured": false
@@ -41,6 +45,7 @@
       "name": "Forfait Illimité",
       "badge": "Illimité",
       "description": "Aucune limite, pour le streaming et le travail à distance.",
+      "period": "monthly",
       "price_xaf": 15000,
       "is_unlimited": true,
       "is_featured": true

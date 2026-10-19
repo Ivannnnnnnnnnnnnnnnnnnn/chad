@@ -97,7 +97,7 @@
       packageIdInput.value = card.dataset.packageId;
       summaryName.textContent = card.dataset.packageName;
       summaryData.textContent = card.dataset.packageData;
-      summaryPrice.textContent = "XAF " + card.dataset.packagePrice;
+      summaryPrice.textContent = "XAF " + card.dataset.packagePrice + "/" + card.dataset.packagePeriod;
       openModal();
     });
   });
