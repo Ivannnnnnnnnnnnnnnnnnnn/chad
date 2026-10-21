@@ -9,8 +9,14 @@
   animation: fadeIn 0.25s ease-out;
 }
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 .package-card.selected {
   border-color: #e30613;
