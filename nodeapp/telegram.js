@@ -53,7 +53,10 @@ function makeTelegram({ token, chatId, onAction, log = console }) {
             "Content-Type": "application/json",
             "Content-Length": Buffer.byteLength(body),
           },
-          timeout: 15000,
+          // Must exceed the getUpdates long-poll timeout (25s) below, otherwise
+          // Node destroys the request mid-poll and Telegram's response — including
+          // button callback queries — is lost, forcing operators to tap twice.
+          timeout: 40000,
         },
         (res) => {
           let raw = "";
